@@ -1,0 +1,7 @@
+{
+  "name": "penalty-trivia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
