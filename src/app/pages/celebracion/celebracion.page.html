@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true" class="contenido">
+
+
+    <div style="position: absolute;  top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); width: 100%; z-index: 999;">
+        <img style="width: -webkit-fill-available;" src="../../../assets/gifs/JugadorCelebración1.gif" alt="">
+    </div>
+
+    <!-- <div style="position: ab   solute;  top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); width: 100%;"> -->
+    <div class="slider" style="position: absolute; width: 100%; bottom: 41%; height: 16%;">
+        <div class="slide-track" style="height: 16%;">
+            <ion-grid>
+                <ion-row>
+                    <ion-col *ngFor="let response of arrayPublicidad;" size="">
+                        <img [src]="response" alt="" style="max-width: 55%; max-height: 100%;">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <!-- </div> -->
+    </div>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true" class="contenido">
+    <div style="display: block;" id="container">
+        <ion-grid class="color-content">
+            <img style="display: block; margin: auto; height: 43vh; margin-top: 10vh;" src="../../assets/img/logo.svg" alt="">
+            <ion-row class="ion-align-items-center">
+                <ion-col size="12">
+
+                    <button style="background-color: transparent;">
+                        <img class="title-image" src="../../assets/img/boton-preguntas.svg" width="xxx" height="xxx" />
+                        <ion-input placeholder="User Player" name="username" [(ngModel)]="username" class="text-input"
+                            required>
+                        </ion-input>
+                    </button>
+                </ion-col>
+                <ion-col size="12" class="ion-text-center">
+                    <button style="background-color: transparent;" (click)="consultPlayer()">
+                        <img class="title-image" src="../../assets/img/boton-verde.svg" width="xxx" height="xxx" />
+                        <p style="margin-top: -18%; color: white; font-size: 10px;" class="font text-btn">JUGAR</p>
+                    </button>
+                </ion-col>
+            </ion-row>
+            <img style="display: block; margin-left: 1rem;" src="../../assets/img/logoinferior.png" alt="">
+        </ion-grid>
+    </div>
+</ion-content>

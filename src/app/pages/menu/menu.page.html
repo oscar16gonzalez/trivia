@@ -1,27 +1,118 @@
 <ion-content class="contenido">
+    <div style="position: absolute; background-color: #007025; height: 2%; width: 100%;"></div>
+    <div style="bottom: 0em; position: absolute; background-color: #007025; height: 2%; width: 100%;"></div>
+    <div style="position: absolute;
+              width: 4rem;
+              margin: 1rem; z-index: 9;">
+        <img style="display: block; margin-left: 1rem;" src="../../assets/img/logo.svg" alt="">
 
-    <div style="display: block;">
-        <ion-col size="12" class="ion-text-center">
-            <button style="background-color: transparent;" (click)="consultPlayer()">
-                <img class="title-image" src="../../assets/img/boton-verde.svg" width="xxx" height="xxx" />
-                <p style="margin-top: -18%; color: white; font-size: 10px;" class="font text-btn">TEMPORADA 1</p>
-            </button>
-        </ion-col>
-            <div style="        margin-top: -2%;
-            width: 35%;
-            height: 40%;
-            background-color: whitesmoke;
-            color: black;
-            margin-left: 63%;">
+    </div>
+
+    <div style="position: absolute;
+    bottom: 1em; z-index: 999;">
+        <ion-button color="success" (click)="ShareWhatsapp()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-button>
+
+    </div>
+
+    <div style="position: absolute;  top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); width: 100%;">
+        <img style="width: -webkit-fill-available;" src="../../../assets/img/mapa.svg" alt="">
+    </div>
+
+    <div style="position: absolute;
+              width: 10em;
+              bottom: 14em;
+              /* margin-left: 38em; */
+              right: 0;
+              margin-right: 4.5em;
+              z-index: 9">
+        <img class="title-image" src="../../assets/img/boton-verde.svg" width="xxx" height="xxx" />
+    </div>
+    <div style="position: absolute;
+              bottom: 14.8rem;
+              /* margin-left: 40em; */
+              right: 0;
+              margin-right: 6.5em;
+              z-index: 9">
+        <label style="color: white; font-size: 10px;" class="font" for="">Temporadas</label>
+    </div>
+    <div style="position: absolute; bottom: 0em; right: 0; margin-right: 2em;">
+        <div style="position: relative;
+                  height: 12em;
+                  width: 15em;
+                  bottom: 2.5em;
+                  overflow: auto;
+                  background-color: rgb(225, 227, 241);
+                  filter: alpha(opacity=50);
+                  opacity: 0.9;
+                  margin-left: 3.5em;">
+
+            <div style="margin: .55rem ;">
                 <ion-grid fixed>
-                    <ion-row>
-                        <ion-col size="6">Icono</ion-col>
-                        <ion-col size="6">Categoria</ion-col>
+                    <ion-row *ngFor="let response of categoria; let i = index" (click)="season(response, response.id)">
+                        <ion-icon *ngIf="response.type !== 'Trofeo' " style=" margin-top: 2vh; " [src]="response.pivot.active ? '../../assets/img/pin-verde.svg' : '../../assets/img/pin-rojo.svg'"></ion-icon>
+                        <ion-icon *ngIf="response.type === 'Trofeo' " style="margin-top: 2vh;" src="../../assets/img/pin-azul.svg"></ion-icon>
+                        <ion-col style="font-size: 10px; margin-left: 3px; font-weight: 800; color: black;" size="7" class="font">
+                            {{response.name}} </ion-col>
+                        <ion-icon *ngIf="response.plays.length > 0" style="margin-top: 2vh; width: 30%;" [src]="partidosGanados"></ion-icon>
+                        <ion-icon *ngIf="response.plays.length <= 0" style="margin-top: 2vh; width: 30%;" [src]="partidos"></ion-icon>
                     </ion-row>
                 </ion-grid>
             </div>
-        
+        </div>
     </div>
-    <!-- <img class="title-image" src="../../assets/img/boton-verde.svg" width="xxx" height="xxx" /> -->
+
+    <div style="position: absolute;
+              bottom: 1rem;
+              /* margin-left: 40em; */
+              right: 0;
+              margin-right: 2.5em;
+              z-index: 9">
+        <img style="margin-top: 2vh; " src="../../assets/img/progreso.svg" />
+
+    </div>
+
+
+    <div class="font" style="position: absolute;
+    bottom: 1.7rem;
+    /* margin-left: 40em; */
+    right: 0;
+    margin-right: 3.5em;
+    z-index: 9;  color: white">
+        <label class="font" style="font-size: 10px;">
+            {{porcentajeGlobal}}
+        </label>
+    </div>
+
+    <div class="font" style="position: absolute;
+    bottom: 1.9rem;
+    /* margin-left: 40em; */
+    right: 0;
+    margin-right: 20.5em;
+    z-index: 9; color: white; font-size: 9px;">
+        <label class="font" style="font-size: 9px;">
+            Progreso
+        </label>
+    </div>
+
+    <!-- <div style="position: absolute; bottom: 0em; right: 0; margin-right: 18em;">
+        <div style="position: relative;
+                  height: 12em;
+                  width: 15em;
+                  bottom: 2.5em;
+                  overflow: auto;
+                  /* background-color: rgba(225, 227, 241, 0.5); */
+                  background-color: white;
+                  /* filter: alpha(opacity=50);
+                  opacity: 0.5; */
+                  margin-left: 3.5em;">
+            <label style="font-size: 12px; color: black; margin: 1rem;">
+                {{tutorial}}
+            </label>
+        </div>
+    </div> -->
 
 </ion-content>
