@@ -42,10 +42,10 @@ export class MenuPage implements OnInit {
   dificultadBot: String = "Baja";
   porcentajeGlobal;
 
-  text: string = 'Hola! Estoy jugando Trivia Penalty Crack. Regístrate  y juega'
+  text: string = 'Hola! Estoy jugando Trivia Penalty Crack. Regístrate  y juega';
   textUrl = null;
-  imgurl: string = 'https://cdn.pixabay.com/photo/2019/12/26/05/10/pink-4719682_960_720.jpg'
-  link: string = 'https://link.medium.com/JA4amAHFJ5'
+  imgurl: string = 'https://cdn.pixabay.com/photo/2019/12/26/05/10/pink-4719682_960_720.jpg';
+  link: string = 'https://link.medium.com/JA4amAHFJ5';
 
 
 

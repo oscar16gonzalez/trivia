@@ -288,23 +288,24 @@ export class SeasonPage implements OnInit {
 
     console.log(dataPartido);
 
-    if (this.puntaje > this.puntajeCPU) {
-      this.nativeAudio.play('victoria')
-      this.service.saveData(dataPartido).then((result) => {
-        console.log("ENVIO DE DATA", result);
+    this.service.saveData(dataPartido).then((result) => {
+      console.log("ENVIO DE DATA", result);
+      if (this.puntaje > this.puntajeCPU) {
+        this.nativeAudio.play('victoria');
         this.presentModal();
-      }).catch((err) => {
-        console.log(err);
-      });
-    } else {
-      this.animavionJugador = "../../../assets/gifs/Jugador-Pierde.gif"
-      this.jugadores = false;
-      this.nativeAudio.play('pierde')
+      } else {
+        this.animavionJugador = "../../../assets/gifs/Jugador-Pierde.gif"
+        this.jugadores = false;
+        this.nativeAudio.play('pierde')
 
-      setTimeout(() => {
-        this.navigate.navigateForward('/menu');
-      }, 6000);
-    }
+        setTimeout(() => {
+          this.navigate.navigateForward('/menu');
+        }, 6000);
+      }
+    }).catch((err) => {
+      console.log(err);
+    });
+
 
   }
 
